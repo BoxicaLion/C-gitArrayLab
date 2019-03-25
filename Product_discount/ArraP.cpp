@@ -22,12 +22,12 @@ Discount<T>::~Discount(void) {
 }   // Destructor
 
 template<class T>
-bool Discount<T>::_get_the_Intem(const T& newIntem){
-    bool _hasRoom = (_intem < _maxIntem);// Checking if the array has space
+bool Discount<T>::_get_the_Intem(const T& _intem){
+    bool _hasRoom = (this -> _intem < this ->_maxIntem);// Checking if the array has space
     if(_hasRoom)
     {
-        _intemArray[_intem] = newIntem;//
-        _intem++;// increment _intem
+        this ->_intemArray[(*this)._intem] = _intem;//
+        this ->_intem++;// increment _intem
     }
     return _hasRoom;//returning the result as a boolean vealue
 }//end function
@@ -35,20 +35,20 @@ bool Discount<T>::_get_the_Intem(const T& newIntem){
 template <class T>
 std::vector<T>Discount<T>::_toVector() const{
     std::vector<T> bagContent;
-    for(int i=0; i<_intem; i++)
-        bagContent.push_back(_intemArray[i]);
+    for(int i=0; i<this ->_intem; i++)
+        bagContent.push_back(this ->_intemArray[i]);
     return bagContent;
     
 }
 
 template<class T>
 int Discount<T>::_CurrentSize() const{
-    return _intem;
+    return this ->_intem;
 }
 
 template<class T>
 bool Discount<T>::_empty() const{
-    return _intem == 0;
+    return this ->_intem == 0;
 }
 
 template<class T>

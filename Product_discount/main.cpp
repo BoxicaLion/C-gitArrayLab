@@ -13,8 +13,10 @@ int main()
     _arrayTester(_array);
     cout << "All done!" << endl;
     
+    cout<<endl<<endl<<endl;
+    cout << "Phase 2: ";
+    cout << "User Input," << endl;
+    _userInput(_array);
     cout<<endl;
-    
-    displayArr(_array);
     return 0;
 } // end main
